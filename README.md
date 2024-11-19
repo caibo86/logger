@@ -56,39 +56,39 @@ ___
 - Close 关闭日志服务
 ___
 **选项配置**：
-- SetFilename 设置日志文件路径
-- SetLevel 设置日志级别
-- SetStacktrace 设置记录堆栈的日志级别
-- SetMaxFileSize 设置日志分割的尺寸
-- SetMaxAge 设置日志保存的时间 单位:天
-- SetMaxBackups 设置最大日志数量
-- SetFormatType 设置日志格式
-- SetCallerSkip 设置堆栈的跳过层数
-- SetIsAsync 设置异步日志
-- SetIsCompress 设置是否压缩
-- SetIsOpenPprof 设置是否打开pprof
-- SetIsOpenConsole 设置是否打开终端标准输出
-- SetIsOpenFile 设置是否打开文件日志
-- SetIsOpenErrorFile 设置是否打开高级别错误文件日志
-- SetIsRedirectErr 设置是否重定向标准错误输出
+- SetFilename：设置日志文件路径
+- SetLevel：设置日志级别
+- SetStacktrace：设置记录堆栈的日志级别
+- SetMaxFileSize：设置日志分割的尺寸
+- SetMaxAge：设置日志保存的时间 单位:天
+- SetMaxBackups：设置最大日志数量
+- SetFormatType：设置日志格式
+- SetCallerSkip：设置堆栈的跳过层数
+- SetIsAsync：设置异步日志
+- SetIsCompress：设置是否压缩
+- SetIsOpenPprof：设置是否打开pprof
+- SetIsOpenConsole：设置是否打开终端标准输出
+- SetIsOpenFile：设置是否打开文件日志
+- SetIsOpenErrorFile：设置是否打开高级别错误文件日志
+- SetIsRedirectErr：设置是否重定向标准错误输出
 ___
 **记录日志**：
-- Debug 打印Debug级别日志,自动参数
-- Debugf 打印Debug级别日志,格式化参数
-- Debugw 打印Debug级别日志,KV参数
-- Info 打印Info级别日志,自动参数
-- Infof 打印Info级别日志,格式化参数
-- Infow 打印Info级别日志,KV参数
-- Warn 打印Warn级别日志,自动参数
-- Warnf 打印Warn级别日志,格式化参数
-- Warnw 打印Warn级别日志,KV参数
-- Error 打印Error级别日志,自动参数
-- Errorf 打印Error级别日志,格式化参数
-- Errorw 打印Error级别日志,KV参数
-- Panic 打印Panic级别日志,自动参数
-- Panicf 打印Panic级别日志,格式化参数
-- Panicw 打印Panic级别日志,KV参数
-- Fatal 打印Fatal级别日志,自动参数
-- Fatalf 打印Fatal级别日志,格式化参数
-- Fatalw 打印Fatal级别日志,KV参数
+- Debug：打印Debug级别日志,自动参数
+- Debugf：打印Debug级别日志,格式化参数
+- Debugw：打印Debug级别日志,KV参数
+- Info：打印Info级别日志,自动参数
+- Infof：打印Info级别日志,格式化参数
+- Infow：打印Info级别日志,KV参数
+- Warn：打印Warn级别日志,自动参数
+- Warnf：打印Warn级别日志,格式化参数
+- Warnw：打印Warn级别日志,KV参数
+- Error：打印Error级别日志,自动参数
+- Errorf：打印Error级别日志,格式化参数
+- Errorw：打印Error级别日志,KV参数
+- Panic：打印Panic级别日志,自动参数
+- Panicf：打印Panic级别日志,格式化参数
+- Panicw：打印Panic级别日志,KV参数
+- Fatal：打印Fatal级别日志,自动参数
+- Fatalf：打印Fatal级别日志,格式化参数
+- Fatalw：打印Fatal级别日志,KV参数
 ## Example
