@@ -17,7 +17,12 @@ ___
 
 ## Logger Levels
 ___
-
+- Debug
+- Info
+- Warn
+- Error
+- Panic
+- Fatal
 
 ## Options
 ___
@@ -46,8 +51,29 @@ type Options struct {
 
 ## Default
 ___
-- 默认日志级别：Debug
-- 
+```golang
+package logger
+
+// DefaultOptions 默认的日志配置
+var DefaultOptions = Options{
+	Filename:        "./log/default.log",
+	Level:           zap.DebugLevel,
+	MaxFileSize:     128,
+	MaxAge:          60,
+	MaxBackups:      1024,
+	Stacktrace:      zap.ErrorLevel,
+	FormatType:      LogFormatConsole,
+	CallerSkip:      1,
+	IsAsync:         false,
+	IsCompress:      true,
+	IsOpenPprof:     false,
+	IsOpenConsole:   true,
+	IsOpenFile:      false,
+	IsOpenErrorFile: false,
+	IsRedirectErr:   true,
+}
+
+```
 
 ## API
 ___
@@ -92,3 +118,6 @@ ___
 - Fatalf：打印Fatal级别日志,格式化参数
 - Fatalw：打印Fatal级别日志,KV参数
 ## Example
+___
+## Note
+___
