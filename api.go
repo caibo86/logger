@@ -17,11 +17,11 @@ func Init(options ...Option) {
 		global.Init(options...)
 	})
 	// 触发创建目录
-	Info("Init logger successfully")
+	Info("successfully initialized logger service")
 	if global.options.IsRedirectErr {
 		err := redirectStdErrLog()
 		if err != nil {
-			Errorf("Redirect panic log err: %s", err)
+			Errorf("redirect panic log err: %s", err)
 		}
 	}
 }

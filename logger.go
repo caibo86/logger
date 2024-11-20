@@ -42,7 +42,4 @@ func (logger *Logger) Init(option ...Option) {
 	logger.atom = zap.NewAtomicLevel()
 	logger.atom.SetLevel(options.Level)
 	logger.zapLogger = options.GetZapLogger()
-	if options.IsOpenPprof {
-		StartPprofTask()
-	}
 }

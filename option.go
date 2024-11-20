@@ -17,6 +17,15 @@ import (
 	"time"
 )
 
+const (
+	DebugLevel = zap.DebugLevel
+	InfoLevel  = zap.InfoLevel
+	WarnLevel  = zap.WarnLevel
+	ErrorLevel = zap.ErrorLevel
+	PanicLevel = zap.PanicLevel
+	FatalLevel = zap.FatalLevel
+)
+
 // Option 日志配置项
 type Option func(options *Options)
 
