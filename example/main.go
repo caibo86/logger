@@ -18,7 +18,7 @@ func main() {
 		logger.SetFilename("test.log"),
 		logger.SetIsRedirectErr(false),
 		logger.SetIsOpenFile(true),
-		logger.SetFormatType(logger.LogFormatJson),
+		// logger.SetFormatType(logger.LogFormatJson),
 		logger.SetStacktrace(logger.ErrorLevel),
 	)
 	defer func() {

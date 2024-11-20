@@ -119,6 +119,8 @@ ___
 - Fatalw：打印Fatal级别日志,KV参数
 ## Example
 ___
+### JSON format
+
 ```golang
 package main
 
@@ -145,6 +147,63 @@ func main() {
 	logger.Error("we have an error")
 	logger.Fatal("hello", "world", 2024)
 }
+
+```
+**Output**:
+```shell
+{"level":"info","ts":"2024-11-20 07:29:16.268","caller":"example/main.go:15","msg":"successfully initialized logger service"}
+{"level":"debug","ts":"2024-11-20 07:29:16.268","caller":"runtime/proc.go:267","msg":"helloworld2024"}
+{"level":"debug","ts":"2024-11-20 07:29:16.268","caller":"runtime/proc.go:267","msg":"hello world 2004"}
+{"level":"debug","ts":"2024-11-20 07:29:16.268","caller":"runtime/proc.go:267","msg":"hello world","foo":"bar"}
+{"level":"error","ts":"2024-11-20 07:29:16.268","caller":"runtime/proc.go:267","msg":"we have an error","stacktrace":"runtime.main\n\t/usr/local/go/src/runtime/proc.go:267"}
+{"level":"fatal","ts":"2024-11-20 07:29:16.268","caller":"runtime/proc.go:267","msg":"helloworld2024","stacktrace":"runtime.main\n\t/usr/local/go/src/runtime/proc.go:267"}
+exit status 1
+
+```
+### Console format
+
+```golang
+package main
+
+import (
+	"github.com/caibo86/logger"
+)
+
+func main() {
+	logger.Init(
+		logger.SetLevel(logger.DebugLevel),
+		logger.SetCallerSkip(2),
+		logger.SetFilename("test.log"),
+		logger.SetIsRedirectErr(false),
+		logger.SetIsOpenFile(true),
+		// logger.SetFormatType(logger.LogFormatJson),
+		logger.SetStacktrace(logger.ErrorLevel),
+	)
+	defer func() {
+		_ = logger.Close()
+	}()
+	logger.Debug("hello", "world", 2024)
+	logger.Debugf("hello world %v", 2004)
+	logger.Debugw("hello world", "foo", "bar")
+	logger.Error("we have an error")
+	logger.Fatal("hello", "world", 2024)
+}
+
+```
+
+**Output**:
+```shell
+2024-11-20 07:31:56.089 test    INFO    example/main.go:15      successfully initialized logger service
+2024-11-20 07:31:56.089 test    DEBUG   runtime/proc.go:267     helloworld2024
+2024-11-20 07:31:56.089 test    DEBUG   runtime/proc.go:267     hello world 2004
+2024-11-20 07:31:56.089 test    DEBUG   runtime/proc.go:267     hello world     {"foo": "bar"}
+2024-11-20 07:31:56.090 test    ERROR   runtime/proc.go:267     we have an error
+runtime.main
+        /usr/local/go/src/runtime/proc.go:267
+2024-11-20 07:31:56.090 test    FATAL   runtime/proc.go:267     helloworld2024
+runtime.main
+        /usr/local/go/src/runtime/proc.go:267
+exit status 1
 
 ```
 ## Note
