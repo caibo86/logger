@@ -1,4 +1,4 @@
-module logger
+module github.com/caibo86/logger
 
 go 1.21
 
