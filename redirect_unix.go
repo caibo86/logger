@@ -40,7 +40,6 @@ func redirectStdErrLog() error {
 	go func() {
 		checkStdErrLogFile()
 		_, _ = fmt.Fprintln(os.Stderr, "no panic:"+time.Now().Format(time.RFC3339))
-		fmt.Println("什么情况")
 		hourTimer := time.NewTicker(1 * time.Hour)
 		defer hourTimer.Stop()
 		for {
