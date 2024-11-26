@@ -12,7 +12,10 @@ import (
 	"sync"
 )
 
+// 全局日志管理器
 var global = &Logger{}
+
+// 全局只能初始化一次
 var once sync.Once
 
 // Logger 日志封装
