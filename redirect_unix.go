@@ -14,6 +14,7 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
+	"path/filepath"
 	"strings"
 	"syscall"
 	"time"
@@ -22,6 +23,10 @@ import (
 // 重定向标准错误输出到日志文件
 func redirectStdErrLog() error {
 	panicFile := strings.Replace(global.fileName, ".log", ".panic", -1)
+	err := os.MkdirAll(filepath.Dir(panicFile), 0755)
+	if err != nil {
+		return err
+	}
 	fd, err := os.OpenFile(panicFile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
 	if err != nil {
 		return err
