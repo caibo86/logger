@@ -6,6 +6,7 @@ require (
 	github.com/caibo86/cberrors v1.0.0
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	go.uber.org/zap v1.27.0
+	golang.org/x/sys v0.27.0
 )
 
 require (

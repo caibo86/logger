@@ -5,6 +5,8 @@
 // @time      : 2024/11/19 下午6:10
 // -------------------------------------------
 
+//go:build !windows
+
 package logger
 
 import (

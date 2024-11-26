@@ -5,7 +5,15 @@
 // @time      : 2024/11/19 下午6:10
 // -------------------------------------------
 
+//go:build windows
+
 package logger
+
+import (
+	"golang.org/x/sys/windows"
+	"os"
+	"strings"
+)
 
 // 重定向标准错误输出到日志文件
 func redirectStdErrLog() error {
