@@ -12,6 +12,7 @@ package logger
 import (
 	"golang.org/x/sys/windows"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
